@@ -9,7 +9,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>	
-		<tycho-version>1.7.0</tycho-version>
+		<tycho-version>2.0.0-SNAPSHOT</tycho-version>
 		<root-dir>${basedir}/..</root-dir>
 		<JENKINS_URL>https://ci.eclipse.org/xtext</JENKINS_URL>
 		<upstreamBranch>master</upstreamBranch>
@@ -29,6 +29,23 @@
 			<url>${JENKINS_URL}/job/xtext-lib/job/${upstreamBranch}/lastStableBuild/artifact/build/maven-repository</url>
 		</repository>
 	</repositories>
+
+			<pluginRepositories>
+		<pluginRepository>
+			<id>xtend-bootstrap</id>
+			<url>${JENKINS_URL}/job/xtend-bootstrap/lastStableBuild/artifact/build-result/maven-repository/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		    <pluginRepository>
+      <id>tycho-snapshots</id>
+      <url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</url>
+    </pluginRepository>
+	</pluginRepositories>
 
 	<dependencies>
 		<dependency>
